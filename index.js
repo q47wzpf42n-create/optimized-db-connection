@@ -22,9 +22,9 @@ const optimizer = new DatabaseOptimizer(dbConfig);
 app.listen(PORT, async () => {
   try {
     await optimizer.initialize();
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
   } catch (error) {
-    console.error('❌ Failed to start server:', error);
+    console.error('Failed to start server:', error);
     process.exit(1);
   }
 });
@@ -82,7 +82,7 @@ app.get('/health', (req, res) => {
 
 // Graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('\n⏹️ Shutting down gracefully...');
+  console.log('\n Shutting down gracefully...');
   await optimizer.close();
   process.exit(0);
 });
