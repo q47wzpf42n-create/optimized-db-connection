@@ -40,7 +40,7 @@ class DatabaseOptimizer {
       this.recordQueryStats(queryStr, duration, 'DATABASE');
       return { data: results, source: 'database', duration };
     } catch (error) {
-      console.error('❌ Query Error:', error.message);
+      console.error('Query Error:', error.message);
       throw error;
     }
   }
@@ -53,7 +53,7 @@ class DatabaseOptimizer {
     this.queryStats[query].totalTime += duration;
     this.queryStats[query].sources[source] = (this.queryStats[query].sources[source] || 0) + 1;
 
-    console.log(`⏱️ ${source}: ${duration}ms`);
+    console.log(`${source}: ${duration}ms`);
   }
 
   invalidateCache(pattern = null) {
