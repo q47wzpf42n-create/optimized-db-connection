@@ -13,7 +13,7 @@ class CacheManager {
   set(key, value, ttl = null) {
     this.cache.set(key, value, ttl);
     this.stats.sets++;
-    console.log(`📦 Cache SET: ${key}`);
+    console.log(`Cache SET: ${key}`);
   }
 
   get(key) {
@@ -30,12 +30,12 @@ class CacheManager {
 
   del(key) {
     this.cache.del(key);
-    console.log(`🗑️ Cache DEL: ${key}`);
+    console.log(`Cache DEL: ${key}`);
   }
 
   flush() {
     this.cache.flushAll();
-    console.log('🗑️ Cache flushed completely');
+    console.log('Cache flushed completely');
   }
 
   getStats() {
